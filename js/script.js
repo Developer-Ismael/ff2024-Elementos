@@ -1,11 +1,14 @@
-let meuDiv = document.getElementById('meuDiv');
-console.log(meuDiv);
-
-let paragrafos = document.getElementsByClassName('paragrafo');
-console.log(paragrafos);
-
-let primeiroParagrafo = document.querySelector('.paragrafo');
-console.log(primeiroParagrafo);
-
-let todosParagrafos = document.querySelectorAll('.paragrafo');
-console.log(todosParagrafos);
+// Funções para os eventos
+function aoClicar(){
+    alert('Você clicou no botão !');
+}
+function aoPerderFoco(){
+    alert('Você saiu do campo!');
+}
+//Selecionando o elemento usando querySelector
+let campo = document.querySelector('#meuCampo');
+let botao = document.querySelector('.btnCampo');
+ 
+// adicionando os eventos
+campo.addEventListener('blur', aoPerderFoco);
+botao.addEventListener('click',aoClicar);
