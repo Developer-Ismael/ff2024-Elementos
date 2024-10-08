@@ -10,17 +10,26 @@
 
 function gerarTabuada() {
     let numero = document.querySelector('#numero').value;
-    let msgTabuada = "";
-    for (let i = 1; i <= 10; i++) {
-        msgTabuada += `${numero} X ${i} = ${numero * i} <br>`;
+
+    if (isNaN(numero) == true || numero == "") {
+        alert("Número Inválido!");
+        document.querySelector('#numero').value = "";
+    } else {
+        let msgTabuada = "";
+        for (let i = 1; i <= 10; i++) {
+            msgTabuada += `${numero} X ${i} = ${numero * i} <br>`;
+        }
+        document.querySelector('h5').innerHTML = msgTabuada;
+        document.querySelector('#numero').disabled = true;
+        document.querySelector('.btn-primary').disabled = true;
+        document.querySelector('.btn-dark').disabled = false;
     }
-    document.querySelector('h5').innerHTML = msgTabuada;
-    document.querySelector('#numero').disabled = true;
-    document.querySelector('.btn-primary').disabled = true;
-    document.querySelector('.btn-dark').disabled = false;
+
+
 }
 function liberarTabuada() {
     let podeGerar = confirm("Deseja gerar outra tabuada?");
+
     if (podeGerar == true) {
         document.querySelector('#numero').disabled = false;
         document.querySelector('.btn-primary').disabled = false;
@@ -30,6 +39,7 @@ function liberarTabuada() {
 document
     .querySelector('.btn-primary')
     .addEventListener('click', gerarTabuada);
+
 document
     .querySelector('.btn-dark')
     .addEventListener('click', liberarTabuada);
