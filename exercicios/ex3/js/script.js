@@ -58,7 +58,7 @@ function lerEexibirResultado() {
     }
 
     let p = document.querySelector("#resultado");
-    p.innerHTML = `O aluno de média ${media.toFixed(2)} está ${resultado}}`;
+    p.innerHTML = `O aluno de média ${media.toFixed(2)} está ${resultado}`;
 }
 
 let botao = document.querySelector('button');
